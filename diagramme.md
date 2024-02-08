@@ -10,8 +10,12 @@ classDiagram
         setSecret()
         getSecret()
     }
+class Woman{
+    enfanter()
+}
 
 Human <|-- Woman
 Human <|-- Man
+
 
 ```

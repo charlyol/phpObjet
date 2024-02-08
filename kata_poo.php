@@ -61,10 +61,30 @@ function testGenre()
 
 function testForce()
 {
-    $marcelline = new Woman();
+    $marcelline = new Woman(name: 'marcelline');
     $adam = new Man();
     assert(assertion: $adam->force === 2);
     assert(assertion: $marcelline->force === 1);
+}
+
+function testEnfanter()
+{
+    $marcelline = new Woman(name: 'marcelline');
+    $adam = new Man();
+    assert(assertion: $marcelline->enfanter() == 'oui je peux enfanter!');
+    assert(assertion: $marcelline->lastName == 'marcelline');
+}
+
+function testStatique()
+{
+    assert(assertion: Human::$population == 0);
+    $woman = new Woman();
+    assert(assertion: Human::$population == 1);
+    $man = new Man();
+    assert(assertion: Human::$population == 2);
+    unset($man);
+    assert(assertion: Human::$population == 1);
+
 }
 
 $test = new TestSuite();
@@ -75,4 +95,6 @@ $test->run(functionName: 'testParam');
 $test->run(functionName: 'testSecret');
 $test->run(functionName: 'testGenre');
 $test->run(functionName: 'testForce');
+$test->run(functionName: 'testEnfanter');
+$test->run(functionName: 'testStatique');
 $test->summarize();

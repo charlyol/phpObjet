@@ -2,6 +2,7 @@
 
 class Human
 {
+    public static int $population = 0;
     public $height = 175;
     public string $lastName;
     public int $force = 1;
@@ -10,11 +11,13 @@ class Human
     public function __construct($name = '')
     {
         $this->lastName = $name;
+        Human::$population++;
 //        echo 'Je suis né.e';
     }
 
     public function __destruct()
     {
+        self::$population--;
 //        echo 'Je suis mort.e';
     }
 
