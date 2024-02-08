@@ -87,6 +87,11 @@ function testStatique()
 
 }
 
+function testTraitInterface(){
+    $marcelline = new Woman(name:'Bernard');
+    assert(assertion:$marcelline->courir()=="i'm running");
+}
+
 $test = new TestSuite();
 $test->run(functionName: 'testInstancier');
 $test->run(functionName: 'testMethodo');
@@ -97,4 +102,5 @@ $test->run(functionName: 'testGenre');
 $test->run(functionName: 'testForce');
 $test->run(functionName: 'testEnfanter');
 $test->run(functionName: 'testStatique');
+$test->run(functionName: 'testTraitInterface');
 $test->summarize();

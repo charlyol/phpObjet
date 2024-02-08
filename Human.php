@@ -2,6 +2,7 @@
 
 class Human
 {
+    use Bipède;
     public static int $population = 0;
     public $height = 175;
     public string $lastName;
