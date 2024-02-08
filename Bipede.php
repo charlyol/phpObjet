@@ -1,8 +1,8 @@
 <?php
 
-trait Bipède
+trait Bipede
 {
-    function courir(): string
+    function run(): string
     {
         return "i'm running";
     }

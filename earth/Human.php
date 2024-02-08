@@ -1,8 +1,11 @@
 <?php
 
-class Human implements Mammal
+namespace earth;
+use Bipede;
+
+class Human implements \earth\Mammal
 {
-    use Bipède;
+    use Bipede;
 
     public static int $population = 0;
     public $height = 175;
@@ -43,6 +46,7 @@ class Human implements Mammal
     {
         return $this->secret;
     }
+
     function hairiness(): string
     {
         return 'j\'ai des poils';
