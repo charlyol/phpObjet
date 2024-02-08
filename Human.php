@@ -1,8 +1,9 @@
 <?php
 
-class Human
+class Human implements Mammal
 {
     use Bipède;
+
     public static int $population = 0;
     public $height = 175;
     public string $lastName;
@@ -41,5 +42,9 @@ class Human
     public function getSecret(): string
     {
         return $this->secret;
+    }
+    function hairiness(): string
+    {
+        return 'j\'ai des poils';
     }
 }

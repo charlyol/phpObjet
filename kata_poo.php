@@ -87,9 +87,13 @@ function testStatique()
 
 }
 
-function testTraitInterface(){
-    $marcelline = new Woman(name:'Bernard');
-    assert(assertion:$marcelline->courir()=="i'm running");
+function testTraitInterface()
+{
+    $marcelline = new Woman(name: 'Bernard');
+    $adam = new Man();
+    assert(assertion: $marcelline->courir() == "i'm running");
+    assert(assertion: $marcelline->hairiness() == 'j\'ai des poils');
+    assert(assertion: $adam->hairiness() == 'j\'ai tout pleins des poils di partout');
 }
 
 $test = new TestSuite();
